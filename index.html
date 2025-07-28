@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Portfólio | Assis Dev</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="particulas"></div>
+
+    <nav class="navegation">
+      <ul class="menu">
+        <li>
+          <a href="#inicio" class="menu-link">Inicio</a>
+        </li>
+        <li>
+          <a href="#sobre" class="menu-link">Sobre</a>
+        </li>
+        <li>
+          <a href="#projetos" class="menu-link">Projetos</a>
+        </li>
+        <li>
+          <a href="#contato" class="menu-link">Contato</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main id="inicio" class="start">
+      <img src="Img/dev.jpg" alt="Foto Dev" class="img-profile" />
+      <h1>Miguel Assis</h1>
+      <p class="start-sub-title">Desenvolvedor Front End</p>
+    </main>
+
+    <section id="sobre" class="contents">
+      <h2 class="content-title">Sobre Mim</h2>
+      <div class="content-box">
+        <p class="content-text">
+          Olá! Sou um desenvolvedor front-end apaixonado por criar experiências
+          web únicas e memoráveis. Combino códigos limpos com design moderno
+          para desenvolver sites que não só funcionam perfeitamente, mas também
+          impressionam visualmente.
+        </p>
+      </div>
+    </section>
+
+    <section id="projetos" class="project">
+      <h2 class="title">Meus Projetos</h2>
+      <div class="project-box">
+        <div class="project-card">
+          <img src="Img/AssDevPro.png" alt="Projeto 1" class="project-img" />
+          <div class="box-text-project">
+            <h3 class="project-title">Ladinng Page</h3>
+            <p class="project-text">
+              Página com efeitos criativos, suaves e com desing responsivo para
+              criadores de conteudo.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="Img/CoffePage.png" alt="Projeto 2" class="project-img" />
+          <div class="box-text-project">
+            <h3 class="project-title">Cafeteria</h3>
+            <p class="project-text">
+              Site com design objetivo, interativo e responsivo com o roteiro
+              para uma Cafeteria.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="Img/AssStore.png" alt="Projeto 3" class="project-img" />
+          <div class="box-text-project">
+            <h3 class="project-title">Loja De Eletronicos</h3>
+            <p class="project-text">
+              Loja virtual moderna com animações suaves e design responsivo para
+              uma loja de Eletronicos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="contact">
+      <h2 class="contact-title">Entre em Contato</h2>
+      <form class="form-contact" id="formlario" onsubmit="enviarWhats(event)">
+        <div class="group-form">
+          <input placeholder="Nome" class="camp-form" id="name" />
+        </div>
+        <div class="group-form">
+          <textarea
+            class="camp-form"
+            placeholder="Digite sua Mensagem"
+            id="mensage"
+            rows="6"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn-form">Enviar Wathsapp</button>
+      </form>
+    </section>
+
+    <section class="footer">
+      <div class="share">
+        <a href="http://www.linkedin.com/in/devmiguelass">
+        <img
+          width="40"
+          height="40"
+          src="https://img.icons8.com/ios-filled/50/7c3aed/linkedin-circled--v1.png"
+          alt="linkedin-circled--v1"
+        />
+        </a>
+        <a href="https://github.com/miguelassis-del">
+        <img
+          width="40"
+          height="40"
+          src="https://img.icons8.com/ios-filled/50/7c3aed/github.png"
+          alt="github"
+        />
+        </a>
+      </div>
+    </section>
+
+    <script>
+      function enviarWhats(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const mensage = document.getElementById("mensage").value;
+        const tel = "5511992785968";
+
+        const text = `Olá! Me Chamo ${name}, ${mensage}`;
+        const msgFormatada = encodeURIComponent(text);
+
+        const url = `https://wa.me/${tel}/?text=${msgFormatada}`;
+        console.log(url);
+        window.open(url, "_blank");
+      }
+    </script>
+  </body>
+</html>
